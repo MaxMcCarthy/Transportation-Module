@@ -27,7 +27,7 @@ class Athlete(object):
         self.distance = 0
         self.name = name
         self.address = address
-        self.position = self.get_coordinates(address)
+        #self.position = self.get_coordinates(address)
 
 
     def create_position(self, address):

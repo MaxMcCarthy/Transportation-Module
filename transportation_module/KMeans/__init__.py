@@ -1,7 +1,6 @@
 import numpy as np
 import csv
 import sys
-from kmeans.ImageOutput import write_2D_picture, write_points
 from transportation_module.Driver import Driver
 import simplejson, urllib
 from transportation_module.Athlete import Athlete

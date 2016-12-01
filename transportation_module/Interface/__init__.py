@@ -47,6 +47,18 @@ def parse_csv():
         except:
             print "UNABLE TO OPEN FILE"
             roster_path = raw_input("Please enter a new .csv file: ")
+
+    return parse_csv_helper(roster_path, roster)
+
+
+def parse_csv_helper(roster):
+    """
+    give a known to be correct roster list object, this parses the athletes and drivers
+    and returns an array
+    :param roster: a list object parsed from csv
+    :return: 2D array [athletes, drivers]
+    """
+
     athletes = []
     drivers = []
 
