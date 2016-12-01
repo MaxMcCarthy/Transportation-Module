@@ -93,7 +93,6 @@ def assign_to_cars(drivers, athletes, data):
     :return:
     """
 
-
     while len(athletes) > 0:
         athlete = athletes.pop()
         if athlete.id <= len(data):
@@ -103,14 +102,6 @@ def assign_to_cars(drivers, athletes, data):
             smallest_dist = info.keys()[0]
             smallest_driver = info.values()[0]
             make_assignments(athlete, smallest_dist, smallest_driver, athletes)
-
-    '''for driver in drivers:
-        print driver.driver_name
-        print len(driver.points)
-        for athlete in driver.points:
-            print athlete.name
-
-        print ""'''
 
     return drivers
 
