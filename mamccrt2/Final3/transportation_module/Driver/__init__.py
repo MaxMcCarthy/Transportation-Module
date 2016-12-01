@@ -35,7 +35,7 @@ class Driver(object):
         self.driver_address = address
         self.meeting_address = address
         self.prev_address = ""
-        self.car_location = self.get_coordinates(address)
+        #self.car_location = self.get_coordinates(address)
 
     def add_point(self, point, distance):
         '''
