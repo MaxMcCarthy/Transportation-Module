@@ -14,8 +14,9 @@ class Athlete(object):
     id = 0
     name = ""
     address = ""
+    dorm_code = ""
 
-    def __init__(self, name, address, id):
+    def __init__(self, name, address, id, dorm_code):
         '''
         sets up a point in space Rn
         centroid id is set to -1 initially since
@@ -28,6 +29,7 @@ class Athlete(object):
         self.name = name
         self.address = address
         self.position = self.get_coordinates(address)
+        self.dorm_code = dorm_code
 
 
     def create_position(self, address):

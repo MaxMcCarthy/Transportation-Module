@@ -23,7 +23,7 @@ def init_athletes(athlete_path):
         athletes = []
         count = 0
         for rower in rower_list:
-            athletes.append(Athlete(rower['Name'], rower['Address'], count))
+            athletes.append(Athlete(rower['Name'], rower['Address'], count, rower['Dorm Code']))
             count += 1
     except:
         print "could not open file"
@@ -48,7 +48,7 @@ def parse_csv():
             print "UNABLE TO OPEN FILE"
             roster_path = raw_input("Please enter a new .csv file: ")
 
-    return parse_csv_helper(roster_path, roster)
+    return parse_csv_helper(roster)
 
 
 def parse_csv_helper(roster):
@@ -67,10 +67,10 @@ def parse_csv_helper(roster):
     driver_count = 0
     for person in roster:
         if person['Is Driver'] == 'yes':
-            drivers.append(Driver(driver_count, person['Address'], int(person['Num Seats']), person['Name']))
+            drivers.append(Driver(driver_count, person['Address'], int(person['Num Seats']), person['Name'], person['Dorm Code']))
             driver_count += 1
         elif person['Is Driver'] == 'no':
-            athletes.append(Athlete(person['Name'], person['Address'], athlete_count))
+            athletes.append(Athlete(person['Name'], person['Address'], athlete_count, person['Dorm Code']))
             athlete_count += 1
 
     return [athletes, drivers]
@@ -97,7 +97,7 @@ def pick_drivers(driver_arr, athletes):
             if curr_id == person.id:
                 driver_needed = True
         if driver_needed is False:
-            athletes.append(Athlete(person.driver_name, person.driver_address, len(athletes)))
+            athletes.append(Athlete(person.driver_name, person.driver_address, len(athletes), person.dorm_code))
         else:
             new_driver_list.append(person)
     return [athletes, new_driver_list]
@@ -143,16 +143,5 @@ if __name__ == '__main__':
     """
     roster_arr = parse_csv()
     roster_arr = pick_drivers(roster_arr[1], roster_arr[0])
-    #for driver in roster_arr[1]:
-        #print driver.car_size
-    #assign_to_cars(roster_arr[1], roster_arr[0], init_distance_matrix(roster_arr[1], roster_arr[0]))
     k_means(roster_arr[1], roster_arr[0])
-    #print_stats(roster_arr[1], roster_arr[0])
-    #while check_efficiency(roster_arr[1]):
-        #print "Making Assignments more efficient... "
-    '''for driver in roster_arr[1]:
-        print driver.driver_name
-        for point in driver.points:
-            print point.name
-        print ""'''
     print_stats(roster_arr[1])
