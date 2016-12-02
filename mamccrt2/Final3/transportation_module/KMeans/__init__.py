@@ -26,7 +26,7 @@ def init_centroids(path):
     driver_arr = []
     id = 0
     for driver in driver_list:
-        driver_arr.append(Driver(id, driver['Address'], int(driver['Size']), driver['Name']))
+        driver_arr.append(Driver(id, driver['Address'], int(driver['Size']), driver['Name'], driver['Dorm Code']))
         id += 1
 
     return driver_arr
@@ -271,7 +271,7 @@ def remove_driver(drivers, driver_to_remove, data):
     athlete_arr = []
     for athlete in driver_to_remove.points:
         athlete_arr.append(athlete)
-    new_athlete = Athlete(driver_to_remove.driver_name, driver_to_remove.driver_address, len(data))
+    new_athlete = Athlete(driver_to_remove.driver_name, driver_to_remove.driver_address, len(data), driver_to_remove.dorm_code)
     drivers.remove(driver_to_remove)
     athlete_arr.append(new_athlete)
     data = add_row_to_data(drivers, new_athlete, data)

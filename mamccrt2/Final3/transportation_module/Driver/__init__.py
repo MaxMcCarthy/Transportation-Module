@@ -18,8 +18,9 @@ class Driver(object):
     id = 0
     car_size = 0
     driver_name = ""
+    dorm_code = ""
 
-    def __init__(self, id, address, car_size, driver_name):
+    def __init__(self, id, address, car_size, driver_name, dorm_code):
         '''
         create new Driver object
         :param id: id of the new driver
@@ -36,6 +37,7 @@ class Driver(object):
         self.meeting_address = address
         self.prev_address = ""
         self.car_location = self.get_coordinates(address)
+        self.dorm_code = dorm_code
 
     def add_point(self, point, distance):
         '''

@@ -1,0 +1,23 @@
+Name,Address,Dorm Code,Is Driver,Num Seats
+Hagar,"906 W College Ct, Urbana, IL 61801",PAR,no,
+Sarah,"906 W College Ct, Urbana, IL 61801",PAR,no,
+Edward,"1005 W College Ct, Urbana, IL 61801",FAR,no,
+Joe,"1005 W College Ct, Urbana, IL 61801",FAR,no,
+Danny,"207 East Gregory Drive, Champaign, IL 61820",Nugent,no,
+Kevin,"1107 S 4th St, Champaign, IL 61820",Greg Towers,no,
+Bill,"1201 S 4th St, Champaign, IL 61820",Lundgren,no,
+Gaurav,"806 W Springfield Ave, Urbana, IL",APT,yes,4
+Mike,"106 South Coler Avenue, Urbana, IL",APT,no,
+Will,"29 East Green Street, Champaign IL",West Quad,yes,4
+Billy,"1010 W Illinois St, Urbana, IL 61801",ISR,no,
+Andy,"1005 W Gregory Dr, Urbana, IL 61801",Allen Hall,no,
+Nate,"206 E Peabody Dr, Champaign, IL 61820",Snyder,no,
+Frank,"204 E Peabody Dr, Champaign, IL 61820",Weston,no,
+Meradith,"1202 S 1st St, Champaign, IL 61820",Wassaja,no,
+Sam,"1010 S 2nd St, Champaign, IL 61820",Armory House,no,
+Rob,"202 E Peabody Dr, Champaign, IL 61820",Scott Hall,no,
+Jim,"103 E Gregory Dr, Champaign, IL 61820",Hopkins Hall,no,
+Alex,"1215 S 4th St, Champaign, IL 61820",Taft,no,
+Matt,"906 W College Ct, Urbana, IL 61801",PAR,yes,6
+Justin,"1007 South First, Champaign IL",APT,yes,4
+Curtis,"1109 West Stoughton, Urbana IL",APT,yes,4
