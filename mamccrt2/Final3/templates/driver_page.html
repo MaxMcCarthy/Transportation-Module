@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Illinois Rowing</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script src="{{ url_for('static', filename='js/html5shiv.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/skel-layers.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+        <noscript>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/skel.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style-xlarge.css') }}">
+        </noscript>
+    </head>
+    <body class="landing">
+
+        <!-- Header -->
+            <header id="header">
+                <h1><a href="{{ url_for('home_page') }}">Home</a></h1>
+            </header>
+
+            <!-- Banner -->
+            <section id="banner">
+                <h2>Illinois Men's Rowing</h2>
+                <p>Driver Scheduler</p>
+            </section>
+            <div style="width: 75%; float: left;">
+                <iframe
+                        width=100%
+                        height="700"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBOdzdXLqA_jUXMPiZ81HrCwv5cgTO_CbA&origin={{ driver.driver_address.replace(' ', '+') }}&destination={{ driver.car_location[0] }},{{ driver.car_location[1] }}">
+                </iframe>
+            </div>
+            <div class="box" style="width: 25%; position: relative; float:right">
+                <h2>Driver: {{ driver.driver_name }}</h2>
+                {% if driver.points %}
+                    {% for athlete in driver.points %}
+                        <div style="line-break: auto;">
+                            <hr>
+                            <h3>{{ athlete.name }}</h3>
+                            <h1>{{ athlete.address }}</h1>
+                            <h1>{{ athlete.dorm_code }}</h1>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+    </body>
+</html>

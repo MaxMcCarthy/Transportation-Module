@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <div>
+        <h2>Available Drivers</h2>
+    </div>
+        {% for driver in drivers %}
+            <div style="text-align: left; position: relative; left: 46%; margin: 0 auto">
+                <input type="checkbox" id={{ driver.driver_name }} value={{ driver.driver_name }} checked name="driver" align="">
+                <label for={{ driver.driver_name }}>{{ driver.driver_name }}</label>
+            </div>
+        {% endfor %}
+        <div>
+            <input type="submit" value="Submit Drivers" id="set_drivers">
+        </div>
+
+        <script>
+            $('#set_drivers').click(function () {
+                var text = "";
+                $.each($("input[name='driver']:checked"), function () {
+                    text += $(this).val() + ","
+                });
+                $.post("{{ url_for('select_drivers') }}", {data: text}, function () {
+                    alert(text);
+                });
+                $("#message").load("{{ url_for('display_message')}}",
+                        {msg1: "Running KMeans...", msg2: "Please Be Patient As This May Take Some Time"}, function () {
+                            $("#data").html("");
+                            $("#data").load("{{ url_for('write_drivers') }}", function () {
+                                $("#message").html("");
+                            });
+                        });
+            });
+        </script>
+</html>
