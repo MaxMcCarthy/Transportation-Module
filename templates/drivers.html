@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Max A McCarthy</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script src="{{ url_for('static', filename='js/html5shiv.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/skel-layers.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+        <noscript>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/skel.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style-xlarge.css') }}">
+        </noscript>
+    </head>
+
+    <body>
+        <div>
+            <h2>DRIVERS</h2>
+        </div>
+        {% for driver in drivers %}
+            <div class="box">
+                <a href="{{ url_for('display_driver', driver_name=driver.driver_name) }}"><h3>Driver: {{ driver.driver_name }}</h3></a>
+                {% if driver.points %}
+                    {% for athlete in driver.points %}
+                        <div>
+                            {{ athlete.name }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <p></p>
+        {% endfor %}
+    </body>
+</html>
