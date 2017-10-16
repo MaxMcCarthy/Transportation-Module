@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+    <form action="{{ url_for('submit_student', team_name=team_name) }}" method="post" name="new-student-form" onsubmit="return true">
+        <input type="text" placeholder="Name" name="name">
+
+        <input type="text" placeholder="Address" name="address">
+
+        <input type="number" placeholder="Number of Seats" name="num_seats">
+
+        <label><input type="checkbox" placeholder="Has Car?" name="has_car">Has Car?</label>
+
+        <input class="btn btn-default" type="submit" value="Create Student">
+    </form>
+</body>
+</html>

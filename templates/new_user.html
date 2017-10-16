@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+    <form action="{{ url_for('create_new_user') }}" method="post" name="new-user-form" onsubmit="return validateForm()">
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Team Name" name="team">
+        <input type="password" placeholder="Password" name="new-pass">
+        <input type="password" placeholder="Re-type Password" name="new-pass1">
+        <input class="btn btn-default" type="submit" value="Create Account">
+    </form>
+</body>
+
+<script>
+    function validateForm() {
+        var pass_a = document.forms["new-user-form"]["new-pass"].value;
+        var pass_b = document.forms["new-user-form"]["new-pass1"].value;
+        if (pass_a != pass_b) {
+            window.alert("Passwords do not match");
+            return false;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{#    <script src="{{ url_for('static', filename='js/html5shiv.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/skel-layers.min.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='js/init.js') }}"></script>#}
+</head>
+<body>
+    <h1>Current Athletes</h1>
+    {% for athlete in athletes %}
+        <h6>{{ athlete.name }}, {{ athlete.address }}, {{ athlete.num_seats }},
+            {{ athlete.has_car }}, {{ athlete.team.name }}
+            <a href="{{ url_for('delete_student', team_name=team_name, doc_id=athlete.mongo_id) }}">delete </a>
+        </h6>
+    {% endfor %}
+    <h1>Manage New Athletes</h1>
+    <button onclick="add_student()">Add Student</button>
+    <div id="add-athlete">
+{#        <p>content</p>#}
+    </div>
+    <script>
+        function add_student() {
+{#            window.alert("HERE");#}
+            $("#add-athlete").prepend($("<div>").load("{{ url_for('add_student', team_name=team_name) }}"));
+{#            $("body").append("<div>word</div>");#}
+        }
+    </script>
+</body>
+</html>
