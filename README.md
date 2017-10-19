@@ -5,7 +5,7 @@ The team currently takes 10-15 private vehicles to Clinton Lake each day at 5:00
 this module uses a K-Means Clustering algorithm with the Cars as centroids and the athletes as points. The algorithm
 clusters students into cars and directs them to a pickup location that minimizes the walking distance for each athlete. The
 driver is then to meet all the athletes at that location. The program calculates the minimum number of drivers needed to get
-the necessary athletes to the lake and recommends which driver(s) be taking out of the driver pool to save gas for a particular
+the necessary athletes to the lake and recommends which driver(s) be taken out of the driver pool to save gas for a particular
 trip.
 
 The module is currently being used by the captain of the Illinois Men's Rowing team to administer car assignments. The module
